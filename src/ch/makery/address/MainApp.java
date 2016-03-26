@@ -84,22 +84,26 @@ public class MainApp extends Application {
     }
 
     /**
-     * Mostra o person overview dentro do root layout.
+     * Mostra a person overview dentro do root layout.
      */
     public void showPersonOverview() {
         try {
-            // Carrega o person overview.
+            // Carrega a person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
 
-            // Define o person overview dentro do root layout.
+            // Define a person overview no centro do root layout.
             rootLayout.setCenter(personOverview);
+
+            // Dá ao controlador acesso à the main app.
+            PersonOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     /**
      * Retorna o palco principal.
      * @return
