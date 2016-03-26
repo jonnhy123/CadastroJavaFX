@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
@@ -57,6 +59,13 @@
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
+                  <HBox layoutX="250.0" layoutY="259.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="New..." />
+                        <Button mnemonicParsing="false" text="Edit..." />
+                        <Button mnemonicParsing="false" text="Delete" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
         </items>
