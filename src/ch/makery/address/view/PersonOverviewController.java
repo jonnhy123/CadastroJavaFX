@@ -96,4 +96,12 @@ public class PersonOverviewController {
     		birthdayLabel.setText("");
     	}
     }
+    /**
+     * Chamado quando o usuário clica no botão delete.
+     */
+    @FXML
+    private void handleDeletePerson() {
+        int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+        personTable.getItems().remove(selectedIndex);
+    }
 }
