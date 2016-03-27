@@ -1,7 +1,9 @@
 
 package ch.makery.address;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.prefs.Preferences;
 
 import ch.makery.address.model.Person;
 import ch.makery.address.view.PersonEditDialogController;
@@ -63,6 +65,8 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
 
+        // Set the application icon.
+        // Definir o ícone do aplicativo.
         this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
         
         initRootLayout();
@@ -157,6 +161,44 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+    
+    /**
+     * Retorna o arquivo de preferências da pessoa, o último arquivo que foi aberto.
+     * As preferências são lidas do registro específico do SO (Sistema Operacional). 
+     * Se tais prefêrencias não puderem  ser encontradas, ele retorna null.
+     * 
+     * @return
+     */
+    public File getPersonFilePath() {
+        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+        String filePath = prefs.get("filePath", null);
+        if (filePath != null) {
+            return new File(filePath);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Define o caminho do arquivo do arquivo carregado atual. O caminho é persistido no
+     * registro específico do SO (Sistema Operacional).
+     * 
+     * @param file O arquivo ou null para remover o caminho
+     */
+    public void setPersonFilePath(File file) {
+        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
+        if (file != null) {
+            prefs.put("filePath", file.getPath());
+
+            // Update the stage title.
+            primaryStage.setTitle("AddressApp - " + file.getName());
+        } else {
+            prefs.remove("filePath");
+
+            // Update the stage title.
+            primaryStage.setTitle("AddressApp");
         }
     }
     

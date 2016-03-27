@@ -60,9 +60,9 @@
                      </children>
                   </GridPane>
                   <HBox layoutX="250.0" layoutY="259.0" spacing="5.0" />
-                  <Button layoutX="133.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleNewPerson" text="New..." />
-                  <Button layoutX="225.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleEditPerson" text="Edit..." />
-                  <Button layoutX="313.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
+                  <Button layoutX="133.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleNewPerson" text="New..." />
+                  <Button layoutX="225.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleEditPerson" text="Edit..." />
+                  <Button layoutX="313.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
                </children>
             </AnchorPane>
         </items>
