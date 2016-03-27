@@ -2,6 +2,7 @@ package ch.makery.address.model;
 
 import java.time.LocalDate;
 
+import ch.makery.address.util.LocalDateAdapter;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -107,9 +108,10 @@ public class Person {
         return city;
     }
 
-    public LocalDate getBirthday() {
-        return birthday.get();
-    }
+    @javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(LocalDateAdapter.class)
+	public LocalDate getBirthday() {
+	    return birthday.get();
+	}
 
     public void setBirthday(LocalDate birthday) {
         this.birthday.set(birthday);
