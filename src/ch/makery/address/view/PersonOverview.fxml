@@ -72,7 +72,7 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Delete">
+                        <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
