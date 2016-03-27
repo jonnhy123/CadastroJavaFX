@@ -156,4 +156,11 @@ public class PersonEditDialogController {
             return false;
         }
     }
-}
+}/*
+Algumas coisas para notar sobre este controller:
+
+O método setPerson(...) pode ser chamado por outra classe para definir a pessoa a ser editada.
+Quando o usuário clica o botão OK, o método handleOk() é chamado. Primeiro, alguma validação é feita pela chamada do método isInputValid(). Só se a validação tiver sucesso, o objeto pessoa é preenchido com os dados que o usuário inseriu. Aquelas mudanças serão aplicadas diretamente ao objeto da pessoa que foi passado para o métodosetPerson(...)!
+O booleano okClicked é usado então o método chamador pode determinar se o usuário clicou no botão OK ou Cancel.
+
+*/
