@@ -11,11 +11,14 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 
  * @author Marco Jakob
  */
+
+//@XmlRootElement define o nome do elemento base.
 @XmlRootElement(name = "persons")
 public class PersonListWrapper {
 
     private List<Person> persons;
 
+    //@XmlElement é um nome opcional nós podemos especificar para o elemento.
     @XmlElement(name = "person")
     public List<Person> getPersons() {
         return persons;
