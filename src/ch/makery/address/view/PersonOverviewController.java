@@ -39,6 +39,34 @@ public class PersonOverviewController {
     }
 
     /**
+     * PReenche todos os campos de texto para mostrar detalhes sobre a pessoa.
+     * Se a pessoa especificada for null, todos os campos de texto são limpos.
+     * 
+     * @param person a pessoa ou null
+     */
+    private void showPersonDetails(Person person) {
+        if (person != null) {
+            // Preenche as labels com informações do objeto person.
+            firstNameLabel.setText(person.getFirstName());
+            lastNameLabel.setText(person.getLastName());
+            streetLabel.setText(person.getStreet());
+            postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
+            cityLabel.setText(person.getCity());
+
+            // TODO: Nós precisamos de uma maneira de converter o aniversário em um String! 
+            // birthdayLabel.setText(...);
+        } else {
+            // Person é null, remove todo o texto.
+            firstNameLabel.setText("");
+            lastNameLabel.setText("");
+            streetLabel.setText("");
+            postalCodeLabel.setText("");
+            cityLabel.setText("");
+            birthdayLabel.setText("");
+        }
+    }
+    
+    /**
      * Inicializa a classe controller. Este método é chamado automaticamente
      *  após o arquivo fxml ter sido carregado.
      */

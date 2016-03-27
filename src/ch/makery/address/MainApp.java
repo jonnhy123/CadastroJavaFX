@@ -94,7 +94,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("view/PersonOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
 
-            // Define o person overview dentro do root layout.
+              // Define o person overview dentro do root layout.
             rootLayout.setCenter(personOverview);
         
          // Dá ao controlador acesso à the main app.
